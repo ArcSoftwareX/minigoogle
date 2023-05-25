@@ -20,7 +20,7 @@ pub fn display_results(value: &Value) {
 pub fn display_summary(value: Option<&Value>) {
     if let Some(value) = value {
         if !value.is_null() {
-            println!("{} {}\n", "Summary for".truecolor(100, 100, 100).bold(), value.as_object().expect("Failed to cast panel to Object").get("name").expect("Failed to get panel name").as_str().expect("Failed to cast name to String").truecolor(132, 204, 22).bold());
+            println!("\n{} {}\n", "Summary for".truecolor(100, 100, 100).bold(), value.as_object().expect("Failed to cast panel to Object").get("name").expect("Failed to get panel name").as_str().expect("Failed to cast name to String").truecolor(132, 204, 22).bold());
             println!("{}", value.as_object().expect("Failed to cast panel to Object").get("description").expect("Failed to get panel description").as_object().expect("Failed to cast description to Object").get("text").expect("Failed to get description text").as_str().expect("Failed to cast description text to String").bright_white());
         }
     }
